@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="129dp"
+        android:layout_marginLeft="129dp"
+        android:layout_marginTop="301dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginRight="130dp"
+        android:onClick="hideElement"
+        android:text="GO!"
+        android:textSize="63sp"
+        app:backgroundTint="@android:color/holo_green_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/optionsGridLayout"
+            android:layout_width="407dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="66dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question">
+
+            <Button
+                android:id="@+id/button0"
+                android:layout_width="102dp"
+                android:layout_height="101dp"
+                android:background="@color/teal_200"
+                android:onClick="correctAnswer"
+                android:tag="0"
+                android:text="14"
+                android:textSize="73sp"
+                app:layout_column="0"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill"
+                app:layout_row="0"
+                app:layout_rowWeight="1" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="102dp"
+                android:layout_height="101dp"
+                android:background="@color/teal_200"
+                android:onClick="correctAnswer"
+                android:tag="1"
+                android:text="14"
+                android:textSize="73sp"
+                app:backgroundTint="@color/design_default_color_error"
+                app:layout_column="1"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill"
+                app:layout_row="0"
+                app:layout_rowWeight="1" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="102dp"
+                android:layout_height="101dp"
+                android:background="@color/teal_200"
+                android:onClick="correctAnswer"
+                android:tag="2"
+                android:text="14"
+                android:textSize="73sp"
+                app:backgroundTint="@android:color/holo_green_light"
+                app:layout_column="0"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill"
+                app:layout_row="1"
+                app:layout_rowWeight="1" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="102dp"
+                android:layout_height="101dp"
+                android:background="@color/purple_500"
+                android:onClick="correctAnswer"
+                android:tag="3"
+                android:text="14"
+                android:textSize="73sp"
+                app:backgroundTint="@android:color/holo_orange_light"
+                app:layout_column="1"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill"
+                app:layout_row="1"
+                app:layout_rowWeight="1" />
+        </androidx.gridlayout.widget.GridLayout>
+
+        <TextView
+            android:id="@+id/correct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="139dp"
+            android:layout_marginLeft="139dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="123dp"
+            android:layout_marginRight="123dp"
+            android:text="Correct :)"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/optionsGridLayout" />
+
+        <Button
+            android:id="@+id/playDobara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="118dp"
+            android:layout_marginRight="118dp"
+            android:onClick="playAgain"
+            android:text="Dobara Khelein"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/correct"
+            tools:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="123dp"
+            android:layout_marginRight="123dp"
+            android:layout_marginBottom="25dp"
+            android:background="?android:attr/colorMultiSelectHighlight"
+            android:padding="7dp"
+            android:text="30 s"
+            android:textSize="63sp"
+            app:layout_constraintBottom_toTopOf="@+id/question"
+            app:layout_constraintEnd_toStartOf="@+id/score"
+            app:layout_constraintHorizontal_bias="0.181"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="167dp"
+            android:layout_height="106dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="166dp"
+            android:background="@color/teal_200"
+            android:text="0/0"
+            android:textSize="63sp"
+            app:layout_constraintBottom_toTopOf="@+id/optionsGridLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="213dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="124dp"
+            android:layout_marginRight="124dp"
+            android:background="@color/white"
+            android:text="30 + 4"
+            android:textSize="53sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timer" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
